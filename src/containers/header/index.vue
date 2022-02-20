@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <header>
       <img src="../../assets/compassuol-logo-min.png" alt="Compass Logo">
       <Clock/>
       <Weather/>
-  </div>
+  </header>
 </template>
 
 <script>

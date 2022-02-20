@@ -1,5 +1,12 @@
 <template>
-  <p> {{ text }} </p>
+  <p :class="{
+    temperature: temperatureData,
+    date: dateData,
+    location: locationData,
+    footerText: footerTextData,
+    timerText: timerTextData,
+    continueText: continueTextData,
+  }"> {{ text }} </p>
 </template>
 
 <script>
@@ -11,10 +18,39 @@ export default {
         required: true,
         default: 'Sample',
       },
-      usage:{
-        type: String,
+      temperature:{
+        default: false,
       },
+      date:{
+        default: false,
+      },
+      location:{
+        default: false,
+      },
+      footerText:{
+        default: false,
+      },
+      timerText:{
+        default: false,
+      },
+      continueText:{
+        default: false,
+      },
+      
 
+
+
+    },
+
+    data(){
+      return{
+        temperatureData: this.temperature,
+        dateData: this.date,
+        locationData: this.location,
+        footerTextData: this.footerText,
+        timerTextData: this.timerText,
+        continueTextData: this.continueText,
+      }
     },
 
 }

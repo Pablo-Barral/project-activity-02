@@ -3,7 +3,7 @@
     <div>
       {{ hourShow }}:{{ minuteShow }}
     </div>
-    <TextContent :text="`${weekDayShow}, ${monthDayShow} de ${monthShow} de ${yearShow}`"/>
+    <TextContent date=true :text="`${weekDayShow}, ${monthDayShow} de ${monthShow} de ${yearShow}`"/>
   </div>
 </template>
 

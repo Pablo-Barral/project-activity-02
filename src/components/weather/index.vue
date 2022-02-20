@@ -1,6 +1,6 @@
 <template>
   <div id="weatherBox">
-    <TextContent :text="`${stateShow}`"/>
+    <TextContent :text="`${cityShow} - ${stateShow}`"/>
     <div>
       <img :src="require(`@/assets/${iconShow}`)" alt="Icon" />
       <TextContent :text="`${temperatureShow}°`" />
@@ -9,7 +9,6 @@
 </template>
 
 <script>
-// import weather from '@/api/weather/weather.js'
 import TextContent from "@/components/textContent";
 
 export default {
@@ -21,7 +20,7 @@ export default {
   data() {
     return {
       temperatureShow: "",
-      city: "",
+      cityShow: "",
       stateShow: "",
       iconShow: ""
     };
@@ -39,7 +38,7 @@ export default {
           fetch(api)
             .then((response) => response.json())
             .then((data) => {
-              // const location = data.location.name;
+
               const region = data.location.region;
 
               this.stateShow = this.regionShort(region);
@@ -53,11 +52,21 @@ export default {
               temperature = temperature.toFixed(0);
               this.temperatureShow = temperature;
 
-              // location(lat,long).then(city =>{ cityName = city})
+              this.location(lat,long).then(city =>{ this.cityShow = city})
             });
         });
       }
     },
+
+    location(lat, lng){
+      let city =
+      fetch("https://us1.locationiq.com/v1/reverse.php?key=pk.9866ca8f778fce5a705ef63d65b98bc8&lat=" + lat + "&lon=" + lng + "&format=json")
+      .then(reply => reply.json())
+      .then(data => {
+          return data.address.city
+      })
+      return city
+},
 
   weatherIcon(icon, id) {
     if (id.includes("thunder") && id.includes("rain")) {
@@ -70,7 +79,8 @@ export default {
       icon = "cloud.png";
     } else if (
       id.includes("Cloudy") ||
-      id.includes("Overcast")
+      id.includes("Overcast") ||
+      id.includes("cloudy")
     ) {
       icon = "cloudy.png";
     } else if (id.includes("Sunny")) {

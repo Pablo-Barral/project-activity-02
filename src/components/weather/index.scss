@@ -1,0 +1,13 @@
+#weatherBox{
+    display: flex;
+    flex-direction: column;
+
+    div{
+        display: flex;
+
+        img{
+            width: 45px;
+            height: 45px;
+        }
+    }
+}

@@ -1,10 +1,20 @@
 <template>
-  
+  <div>
+    <div>
+
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
 
+// import TextContent from '@/components/textContent'
+
+export default {
+name:'Clock',
+components:{
+  // TextContent,
+}
 }
 </script>
 

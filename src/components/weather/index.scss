@@ -1,13 +1,22 @@
 #weatherBox{
     display: flex;
     flex-direction: column;
+    color: #222222;
+    position: relative;
+    right: 40px;
 
     div{
         display: flex;
+        position: relative;
+        bottom: 10px;
 
         img{
             width: 45px;
             height: 45px;
+        }
+        p{
+            position: relative;
+            bottom: 10px;
         }
     }
 }

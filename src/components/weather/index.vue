@@ -1,9 +1,9 @@
 <template>
   <div id="weatherBox">
-    <TextContent :text="`${cityShow} - ${stateShow}`"/>
+    <TextContent location=true :text="`${cityShow} - ${stateShow}`"/>
     <div>
       <img :src="require(`@/assets/${iconShow}`)" alt="Icon" />
-      <TextContent :text="`${temperatureShow}°`" />
+      <TextContent temperature=true :text="`${temperatureShow}°`" />
     </div>
   </div>
 </template>

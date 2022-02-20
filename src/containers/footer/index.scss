@@ -1,0 +1,64 @@
+footer{
+    display: grid;
+    grid-template-columns: 17.6% 28.6% 5.8% 5.5% 5% 23.5% 7% 7%;
+
+    background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
+    color: #FFFFFF;
+    position: relative;
+    right: 8px;
+    height: 100px;
+    width: 100vw;
+
+    p{
+        height: 100px;
+        position: relative;
+        bottom: 12px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    span{
+        position: absolute;
+        left: 48%;
+        top: 20%;
+        height: 60%;
+        border-right: #ffffff solid 1px;
+    }
+
+    #timerBox{
+        height: 100px;
+
+        div{
+            font-weight: 700;
+            font-size: 48px;
+        }
+        p{
+            display: block;
+            bottom: 15px;
+            left: 5%;
+            width: fit-content;
+            height: fit-content;
+            margin: 0;
+        }
+    }
+
+    #continueText{
+        background-color: #FFFFFF;
+        height: 100px;
+        position: relative;
+        bottom: 12px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    button{
+        background: transparent;
+        font-weight: 700;
+        font-size: 12px;
+        border: 0;
+        color: #FFFFFF;
+        height: 100px;
+    }
+}

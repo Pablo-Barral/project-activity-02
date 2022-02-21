@@ -2,6 +2,8 @@
   <h1 v-if="size === '1'" 
   :style="{color: textColor}" 
   :class="{
+    greetingTitle: greetingTitleData,
+    loginTitle: loginTitleData,
     firstTitle: homeFirstTitleData,
     homeTitleStyle: homeTitleData
   }">
@@ -10,6 +12,8 @@
   <h2 v-else-if="size === '2'" 
   :style="{color: textColor}" 
   :class="{
+    greetingTitle: greetingTitleData,
+    loginTitle: loginTitleData,
     firstTitle: homeFirstTitleData,
     homeTitleStyle: homeTitleData
   }">
@@ -18,6 +22,8 @@
   <h3 v-else-if="size === '3'" 
   :style="{color: textColor}" 
   :class="{
+    greetingTitle: greetingTitleData,
+    loginTitle: loginTitleData,
     firstTitle: homeFirstTitleData,
     homeTitleStyle: homeTitleData
   }">
@@ -26,6 +32,8 @@
   <h4 v-else-if="size === '4'" 
   :style="{color: textColor}" 
   :class="{
+    greetingTitle: greetingTitleData,
+    loginTitle: loginTitleData,
     firstTitle: homeFirstTitleData,
     homeTitleStyle: homeTitleData
   }">
@@ -34,6 +42,8 @@
   <h5 v-else-if="size === '5'" 
   :style="{color: textColor}" 
   :class="{
+    greetingTitle: greetingTitleData,
+    loginTitle: loginTitleData,
     firstTitle: homeFirstTitleData,
     homeTitleStyle: homeTitleData
   }">
@@ -42,6 +52,8 @@
   <h6 v-else-if="size === '6'" 
   :style="{color: textColor}" 
   :class="{
+    greetingTitle: greetingTitleData,
+    loginTitle: loginTitleData,
     firstTitle: homeFirstTitleData,
     homeTitleStyle: homeTitleData
   }">
@@ -65,6 +77,12 @@ name:'Title',
    textColor:{
      type: String,
    },
+   greetingTitle:{
+     default: false,
+   },
+   loginTitle:{
+     default: false,
+   },
    homeFirstTitle:{
      default: false,
    },
@@ -76,6 +94,8 @@ name:'Title',
 
  data(){
    return{
+     greetingTitleData: this.greetingTitle,
+     loginTitleData: this.loginTitle,
      homeFirstTitleData: this.homeFirstTitle,
      homeTitleData: this.homeTitle
    }

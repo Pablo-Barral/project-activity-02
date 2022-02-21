@@ -1,6 +1,8 @@
 div{
     background: url('@/assets/login.png');
     width: 50%;
+    position: relative;
+    bottom: 8px;
     height: 100vh;
     display: flex;
     justify-content: center;

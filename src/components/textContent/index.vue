@@ -1,5 +1,6 @@
 <template>
   <p :class="{
+    greeting: greetingData,
     temperature: temperatureData,
     date: dateData,
     location: locationData,
@@ -18,6 +19,9 @@ export default {
         type: String,
         required: true,
         default: 'Sample',
+      },
+      greeting:{
+        default: false,
       },
       temperature:{
         default: false,
@@ -48,6 +52,7 @@ export default {
 
     data(){
       return{
+        greetingData: this.greeting,
         temperatureData: this.temperature,
         dateData: this.date,
         locationData: this.location,

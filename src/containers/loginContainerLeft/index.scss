@@ -2,14 +2,41 @@ div{
     background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
     width: 50%;
     height: 100vh;
-    color: #ffffff;
+    color: #E0E0E0;
     position: relative;
     bottom: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    #box{
+        background: transparent;
+        height: 75%;
+        position: relative;
+        top: 20%;
+        align-items: flex-start;
+
+        div{
+            width: 76%;
+            background: transparent;
+            align-items: flex-start;
+        }
+    }
+
     form{
         background: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        width: 100%;
+        height: 110%;
+
+        position: relative;
+        bottom: 20%;
+
+        div{
+            background: transparent;
+        }
     }
 }

@@ -4,8 +4,9 @@ footer{
 
     background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
     color: #FFFFFF;
-    position: relative;
-    right: 8px;
+    position: absolute;
+    bottom: 0;
+    right: 4px;
     height: 100px;
     width: 100vw;
 
@@ -61,4 +62,8 @@ footer{
         color: #FFFFFF;
         height: 100px;
     }
+}
+
+#footerBox{
+    position: relative;
 }

@@ -3,6 +3,7 @@
     temperature: temperatureData,
     date: dateData,
     location: locationData,
+    homeParagraph: homeParagraphData,
     footerText: footerTextData,
     timerText: timerTextData,
     continueText: continueTextData,
@@ -27,6 +28,9 @@ export default {
       location:{
         default: false,
       },
+      homeParagraph:{
+        default: false,
+      },
       footerText:{
         default: false,
       },
@@ -47,6 +51,7 @@ export default {
         temperatureData: this.temperature,
         dateData: this.date,
         locationData: this.location,
+        homeParagraphData: this.homeParagraph,
         footerTextData: this.footerText,
         timerTextData: this.timerText,
         continueTextData: this.continueText,

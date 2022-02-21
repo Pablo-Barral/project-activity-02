@@ -2,8 +2,10 @@
   <div>
       <img src="@/assets/ball-LogoCompass.png" alt="Compass logo">
       <div>
-          <Title/>
-          <TextContent/>
+          <div id="firstParagraph">
+            <Title size=2 text="Our mission is" textColor="#C12D18"/>
+            <TextContent homeParagraph=true text="Nossa missão é"/>
+          </div>
       </div>
   </div>
 </template>

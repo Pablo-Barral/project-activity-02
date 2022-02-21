@@ -1,12 +1,21 @@
 <template>
   <div>
-
+    <LoginLeft/>
+    <LoginRight/>
   </div>
 </template>
 
 <script>
+
+import LoginLeft from '@/containers/loginContainerLeft'
+import LoginRight from '@/containers/loginContainerRight'
+
 export default {
-name:"Login"
+name:"Login",
+components:{
+  LoginLeft,
+  LoginRight
+}
 }
 </script>
 

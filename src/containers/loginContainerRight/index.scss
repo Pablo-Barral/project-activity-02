@@ -1,0 +1,13 @@
+div{
+    background: url('@/assets/login.png');
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+
+    img{
+        width: 305px;
+        height: 105px;
+    }
+}

@@ -1,17 +1,23 @@
 .temperature{
    font-weight: 700;
    font-size: 48px;
-   margin: 0; 
+   margin: 0;
+   position: relative;
+   bottom: 10px; 
 }
 .date{
     font-size: 14px;
+    position: relative;
+    bottom: 50px;
 }
 .location{
     font-size: 14px;
-
 }
-.hometParagraph{
+.homeParagraph{
     font-size: 24px;
+    margin: 0;
+    position: relative;
+    bottom: 13px;
 }
 .footerText{
     font-size: 12px;

@@ -1,8 +1,8 @@
 <template>
-  <div>
-      <img src="@/assets/ball-LogoCompass.png" alt="Compass logo">
-      <div>
-            <div id="firstParagraph">
+  <div id="homeBody">
+        <img src="@/assets/ball-LogoCompass.png" alt="Compass logo">
+        <div id="paragraphBox">
+            <div>
                 <Title size=2 text="Our mission is" textColor="#C12D18"/>
                 <TextContent homeParagraph=true text="Nossa missão é"/>
             </div>
@@ -14,10 +14,8 @@
             <TextContent homeParagraph=true text="construindo experiências digitais"/>
 
             <Title size=3 text="that enable our client’s growth" textColor="#C12D18"/>
-            <TextContent homeParagraph=true text="que permitam o crescimento dos nossos clientes"/>
-
-            
-      </div>
+            <TextContent homeParagraph=true text="que permitam o crescimento dos nossos clientes"/>            
+        </div>
   </div>
 </template>
 

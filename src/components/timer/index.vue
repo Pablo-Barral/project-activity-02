@@ -5,6 +5,9 @@
 </template>
 
 <script>
+
+import { mapMutations } from 'vuex'
+
 export default {
     name: "Timer",
     data(){
@@ -13,9 +16,16 @@ export default {
         }
     },
     methods:{
+
+        ...mapMutations(['timeout']),
+
         countdown(){
             setInterval(() => {
+                if(this.seconds > 0){
                 this.seconds--
+                }else{
+                    this.timeout()
+                }
             }, 1000);
         }
     },

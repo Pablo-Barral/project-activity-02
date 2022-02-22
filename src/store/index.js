@@ -6,18 +6,26 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    logged: false
+    logged: false,
+    seconds: 600
   },
   getters: {
+    seconds: (state) =>{
+      return state.seconds
+    }
   },
   mutations: {
-    timeout(state){
+    logout(state){
       state.logged = false
       router.push('/login')
+      state.seconds = 600
     },
     logIn(state){
       state.logged = true
       router.push('/home')
+    },
+    minusSecond(state){
+      state.seconds--
     }
   },
   actions: {

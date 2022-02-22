@@ -7,25 +7,28 @@
 <script>
 
 import { mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
     name: "Timer",
-    data(){
-        return{
-            seconds: 600
-        }
+    computed:{
+        ...mapState(['seconds', 'logged']),
     },
     methods:{
 
-        ...mapMutations(['timeout']),
+        ...mapMutations(['logout', 'minusSecond']),
 
         countdown(){
             if (this.seconds > 0){
                 let counter = setInterval(() => {
-                    this.seconds--
+                    this.minusSecond()
+                    console.log(this.seconds)
+                    if(!this.logged){
+                        clearInterval(counter)
+                    }
                     if (this.seconds == 0){
                         clearInterval(counter)
-                        this.timeout()
+                        this.logout()
                     }
                 }, 1000);
             }
@@ -33,7 +36,6 @@ export default {
     },
 
     created(){
-        this.seconds = 600
         this.countdown()
     },
     

@@ -8,7 +8,7 @@
             continuar a navegar."/>
             <span/>
             <TextContent :style="{'grid-column': 4, 'text-align': 'right'}" timerText=true text="Application refresh in" />
-            <div :style="{'grid-column': 6}" id="timerBox">
+            <div :style="{'grid-column': 5}" id="timerBox">
                 <Timer/>
                 <TextContent timerText=true text="seconds" />
             </div>

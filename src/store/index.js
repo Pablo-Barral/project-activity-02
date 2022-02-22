@@ -17,6 +17,7 @@ export default new Vuex.Store({
     },
     logIn(state){
       state.logged = true
+      router.push('/home')
     }
   },
   actions: {

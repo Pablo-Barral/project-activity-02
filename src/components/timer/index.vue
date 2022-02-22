@@ -20,18 +20,23 @@ export default {
         ...mapMutations(['timeout']),
 
         countdown(){
-            setInterval(() => {
-                if(this.seconds > 0){
-                this.seconds--
-                }else{
-                    this.timeout()
-                }
-            }, 1000);
+            if (this.seconds > 0){
+                let counter = setInterval(() => {
+                    this.seconds--
+                    if (this.seconds == 0){
+                        clearInterval(counter)
+                        this.timeout()
+                    }
+                }, 1000);
+            }
         }
     },
-    mounted(){
+
+    created(){
+        this.seconds = 600
         this.countdown()
-    }
+    },
+    
 
 }
 </script>

@@ -13,7 +13,7 @@
                 <TextContent timerText=true text="seconds" />
             </div>
             <TextContent id="continueText"  :style="{'grid-column': 7}" continueText=true text="Continuar Navegando" />
-            <button :style="{'grid-column': 8}">Logout</button>
+            <button @click="logout" :style="{'grid-column': 8}">Logout</button>
         </div>
   </footer>
 </template>
@@ -22,6 +22,7 @@
 
 import TextContent from '@/components/textContent'
 import Timer from '@/components/timer'
+import { mapMutations } from 'vuex'
 
 export default {
     name: "Footer",
@@ -35,6 +36,10 @@ export default {
             seconds: 600
         }
     },
+
+    methods:{
+        ...mapMutations(["logout"])
+    }
 
 
 

@@ -8,8 +8,8 @@
             continuar a navegar."/>
             <span/>
             <TextContent :style="{'grid-column': 4, 'text-align': 'right'}" timerText=true text="Application refresh in" />
-            <div :style="{'grid-column': 6}" id="timerBox">
-                <div>{{ seconds }}</div>
+            <div :style="{'grid-column': 5}" id="timerBox">
+                <Timer/>
                 <TextContent timerText=true text="seconds" />
             </div>
             <TextContent id="continueText"  :style="{'grid-column': 7}" continueText=true text="Continuar Navegando" />
@@ -21,11 +21,13 @@
 <script>
 
 import TextContent from '@/components/textContent'
+import Timer from '@/components/timer'
 
 export default {
     name: "Footer",
     components:{
-        TextContent
+        TextContent,
+        Timer
     },
 
     data(){

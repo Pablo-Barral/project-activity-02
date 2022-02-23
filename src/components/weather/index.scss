@@ -5,6 +5,10 @@
     position: relative;
     right: 40px;
 
+    @media(max-width: 1000px){
+        display: none;
+    }
+
     div{
         display: flex;
         position: relative;

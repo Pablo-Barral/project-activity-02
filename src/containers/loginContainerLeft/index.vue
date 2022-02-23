@@ -1,7 +1,7 @@
 <template>
   <div>
       <div id="box">
-            <div>
+            <div id="greetingBox">
                 <Title size=2 text="Olá," greetingTitle=true />
                 <TextContent text="Para continuar navegando
                 de forma segura, efetue o login na rede." greeting=true />

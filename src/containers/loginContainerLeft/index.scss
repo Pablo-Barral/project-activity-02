@@ -9,6 +9,10 @@ div{
     flex-direction: column;
     align-items: center;
 
+    @media(max-width: 1000px){
+        width: 100%;
+    }
+
     #box{
         background: transparent;
         height: 75%;
@@ -16,10 +20,22 @@ div{
         top: 20%;
         align-items: flex-start;
 
+        @media(max-width: 1000px){
+            width: 80%;
+        }
+
+        #greetingBox{
+            @media(max-width: 1000px){
+                width: 100%;
+            }
+        }
+
         div{
             width: 76%;
             background: transparent;
             align-items: flex-start;
+            position: relative;
+            bottom: 10%;
         }
     }
 
@@ -34,6 +50,11 @@ div{
 
         position: relative;
         bottom: 20%;
+
+        @media(max-width: 1000px){
+            height: 80%;
+            bottom: 7%;
+        }
 
         div{
             background: transparent;

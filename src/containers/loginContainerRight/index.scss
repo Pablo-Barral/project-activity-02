@@ -8,8 +8,17 @@ div{
     justify-content: center;
     background-size: cover;
 
+    @media(max-width: 1000px){
+        width: 0%;
+    }
+
     img{
         width: 305px;
         height: 105px;
+
+        @media(max-width: 1000px){
+            position: absolute;
+            right: 0;
+        }
     }
 }

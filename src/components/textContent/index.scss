@@ -49,8 +49,25 @@
     width: 67%;
     align-self: center;
     position: relative;
-    top: 28px;
+    top: 20px;
     visibility: hidden;
+
+    @media(max-width: 1590px){
+        width: 75%;
+    }
+    @media(max-width: 1420px){
+        width: 80%;
+    }
+    @media(max-width: 1330px){
+        width: 90%;
+    }
+    @media(max-width: 1190px){
+        width: 100%;
+    }
+    @media(max-width: 1000px){
+        font-size: 13px;
+        width: 80%;
+    }
 }
 .visible{
     visibility: visible;

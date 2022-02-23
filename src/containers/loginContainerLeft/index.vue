@@ -10,12 +10,15 @@
                 <Title size=3 text="Login" loginTitle=true />
                 <Input type="text" 
                 sample="Usuário" 
-                icon="user"/>
+                icon="user"
+                :style="{'margin-bottom': '16px'}" />
                 <Input type="password" 
                 sample="Senha" 
-                icon="lock"/>
-                <TextContent text="Ops, usuário ou senha inválidos. Tente novamente!"
-                loginError=true />
+                icon="lock"
+                :style="{'margin-top': '16px'}" />
+                <TextContent 
+                text="Ops, usuário ou senha inválidos. Tente novamente!"
+                loginErrorText=true />
                 <Input type="submit"
                 submit=true />
         </form>

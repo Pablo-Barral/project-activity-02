@@ -9,10 +9,12 @@
     timerText: timerTextData,
     continueText: continueTextData,
     loginError: loginErrorData,
+    visible: loginError
   }"> {{ text }} </p>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
     name: 'TextContent',
     props:{
@@ -45,7 +47,7 @@ export default {
       continueText:{
         default: false,
       },
-      loginError:{
+      loginErrorText:{
         default: false,
       }
     },
@@ -60,9 +62,12 @@ export default {
         footerTextData: this.footerText,
         timerTextData: this.timerText,
         continueTextData: this.continueText,
-        loginErrorData: this.loginError
+        loginErrorData: this.loginErrorText
       }
     },
+    computed:{
+      ...mapState(['loginError'])
+    }
 
 }
 </script>

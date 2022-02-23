@@ -31,12 +31,6 @@ export default {
         Timer
     },
 
-    data(){
-        return{
-            seconds: 600
-        }
-    },
-
     methods:{
         ...mapMutations(["logout"])
     }

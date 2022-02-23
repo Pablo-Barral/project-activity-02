@@ -38,8 +38,12 @@
     color: #E9B425;
     font-weight: 700;
     text-align: center;
-    width: 90%;
+    width: 67%;
     align-self: center;
     position: relative;
     top: 28px;
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
 }

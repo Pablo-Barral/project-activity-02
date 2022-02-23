@@ -8,6 +8,7 @@
     footerText: footerTextData,
     timerText: timerTextData,
     continueText: continueTextData,
+    loginError: loginErrorData,
   }"> {{ text }} </p>
 </template>
 
@@ -44,10 +45,9 @@ export default {
       continueText:{
         default: false,
       },
-      
-
-
-
+      loginError:{
+        default: false,
+      }
     },
 
     data(){
@@ -60,6 +60,7 @@ export default {
         footerTextData: this.footerText,
         timerTextData: this.timerText,
         continueTextData: this.continueText,
+        loginErrorData: this.loginError
       }
     },
 

@@ -1,9 +1,10 @@
 <template>
-  <span :class="{textSpan: !submitData}">
+  <span :class="{textSpan: !submitData, loginError: loginError && !submitData}">
       <input :type="type" 
       :placeholder="sample" 
-      :value="innerText"
-      :class="{submit: submitData}">
+      :class="{submit: submitData}"
+      v-model="fieldData"
+      @blur="sendData">
 
       <img v-if="icon" 
       :src="require(`@/assets/${iconData}.png`)" 
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
 export default {
     name: "Input",
 
@@ -28,10 +30,6 @@ export default {
             type: String,
             default: "",
         },
-        innerText:{
-            type: String,
-            default: "",
-        },
         submit:{
             default: false,
         },
@@ -41,7 +39,34 @@ export default {
         return{
             iconData: this.icon,
             submitData: this.submit,
+            fieldData: 'Continuar',
         }
+    },
+    computed:{
+        ...mapState(['loginError', 'user', 'password'])
+    },
+
+    methods:{
+        ...mapMutations(['setUser', 'setPassword']),
+
+        sendData(){
+            if(this.type == 'password'){
+                this.setPassword(this.fieldData)
+            }else if(this.type != 'submit'){
+                this.setUser(this.fieldData)
+            }
+        },
+        updateData(){
+            if(this.type == 'password'){
+                this.fieldData = this.password
+            }else if (this.type != 'submit'){
+                this.fieldData = this.user
+            }
+        }
+        
+    },
+    created(){
+        this.updateData()
     }
 }
 </script>

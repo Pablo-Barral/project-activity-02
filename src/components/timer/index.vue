@@ -22,7 +22,6 @@ export default {
             if (this.seconds > 0){
                 let counter = setInterval(() => {
                     this.minusSecond()
-                    console.log(this.seconds)
                     if(!this.logged){
                         clearInterval(counter)
                     }

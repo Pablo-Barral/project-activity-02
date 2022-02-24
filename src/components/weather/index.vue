@@ -1,16 +1,16 @@
 <template>
   <div id="weatherBox">
-    <TextContent location=true :text="`${cityShow} - ${stateShow}`"/>
+    <TextContent location="true" :text="`${cityShow} - ${stateShow}`" />
     <div>
       <img :src="require(`@/assets/${iconShow}.png`)" alt="Icon" />
-      <TextContent temperature=true :text="`${temperatureShow}°`" />
+      <TextContent temperature="true" :text="`${temperatureShow}°`" />
     </div>
   </div>
 </template>
 
 <script>
 import TextContent from "@/components/textContent";
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   name: "Weather",
@@ -23,70 +23,93 @@ export default {
       temperatureShow: "",
       cityShow: "",
       stateShow: "",
-      iconShow: ""
+      iconShow: "",
     };
   },
 
   methods: {
     weather() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          let long = position.coords.longitude;
-          let lat = position.coords.latitude;
+      if (!localStorage.getItem("lat") || !localStorage.getItem("long")) {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            let long = position.coords.longitude;
+            let lat = position.coords.latitude;
 
-          const api = `https://api.weatherapi.com/v1/current.json?key=288ce9269f9c46699a1185755220202&q=${lat},${long}`;
+            localStorage.setItem("lat", lat);
+            localStorage.setItem("long", long);
+            this.weatherShow()
+          });
+        }
+      }else{
+        this.weatherShow()
+      }
+      
+    },
 
-          axios.get(api)
-            .then((response) => {
+    weatherShow(){
+      let lat = localStorage.getItem("lat");
+      let long = localStorage.getItem("long");
 
-              const region = response.data.location.region;
+      const api = `https://api.weatherapi.com/v1/current.json?key=288ce9269f9c46699a1185755220202&q=${lat},${long}`;
 
-              this.stateShow = this.regionShort(region);
+      axios.get(api).then((response) => {
+        const region = response.data.location.region;
 
-              let icon = response.data.current.condition.icon;
-              const id = response.data.current.condition.text;
-              this.iconShow = this.weatherIcon(icon, id);
+        this.stateShow = this.regionShort(region);
 
-              let temperature = response.data.current.temp_c;
-              temperature = temperature.toFixed(0);
-              this.temperatureShow = temperature;
+        let icon = response.data.current.condition.icon;
+        const id = response.data.current.condition.text;
+        this.iconShow = this.weatherIcon(icon, id);
 
-              this.location(lat,long).then(city =>{ this.cityShow = city})
-            });
-        });
+        let temperature = response.data.current.temp_c;
+        temperature = temperature.toFixed(0);
+        this.temperatureShow = temperature;
+
+        const lat = localStorage.getItem("lat");
+        const long = localStorage.getItem("long");
+        this.location(lat, long);
+      });
+    },
+
+    location(lat, lng) {
+      if (!localStorage.getItem("city")) {
+        axios
+          .get(
+            "https://us1.locationiq.com/v1/reverse.php?key=pk.9866ca8f778fce5a705ef63d65b98bc8&lat=" +
+              lat +
+              "&lon=" +
+              lng +
+              "&format=json"
+          )
+          .then((reply) => {
+            localStorage.setItem("city", reply.data.address.city);
+            this.cityShow = reply.data.address.city;
+          });
+      } else {
+        this.cityShow = localStorage.getItem("city");
       }
     },
 
-    location(lat, lng){
-      let city =
-      axios.get("https://us1.locationiq.com/v1/reverse.php?key=pk.9866ca8f778fce5a705ef63d65b98bc8&lat=" + lat + "&lon=" + lng + "&format=json")
-      .then(reply => {
-          return reply.data.address.city
-      })
-      return city
-},
-
-  weatherIcon(icon, id) {
-    if (id.includes("thunder") && id.includes("rain")) {
-      icon = "storm";
-    } else if (id.includes("thunder")) {
-      icon = "thunder";
-    } else if (id.includes("rain") || id.includes("drizzle")) {
-      icon = "raining";
-    } else if (id.includes("Fog") || id.includes("Mist")) {
-      icon = "cloud";
-    } else if (
-      id.includes("Cloudy") ||
-      id.includes("Overcast") ||
-      id.includes("cloudy")
-    ) {
-      icon = "cloudy";
-    } else if (id.includes("Sunny")) {
-      icon = "sun";
-    }
-    return icon;
-},
-
+    weatherIcon(icon, id) {
+      if (id.includes("thunder") && id.includes("rain")) {
+        icon = "storm";
+      } else if (id.includes("thunder")) {
+        icon = "thunder";
+      } else if (id.includes("rain") || id.includes("drizzle")) {
+        icon = "raining";
+      } else if (id.includes("Fog") || id.includes("Mist")) {
+        icon = "cloud";
+      } else if (
+        id.includes("Cloudy") ||
+        id.includes("Overcast") ||
+        id.includes("cloudy")
+      ) {
+        icon = "cloudy";
+      } else if (id.includes("Sunny")) {
+        icon = "sun";
+      }
+      return icon;
+    },
 
     regionShort(region) {
       let regionShow = "";

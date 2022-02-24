@@ -2,7 +2,7 @@
   <div id="weatherBox">
     <TextContent location=true :text="`${cityShow} - ${stateShow}`"/>
     <div>
-      <img :src="require(`@/assets/${iconShow}`)" alt="Icon" />
+      <img :src="require(`@/assets/${iconShow}.png`)" alt="Icon" />
       <TextContent temperature=true :text="`${temperatureShow}°`" />
     </div>
   </div>
@@ -10,6 +10,7 @@
 
 <script>
 import TextContent from "@/components/textContent";
+import axios from 'axios';
 
 export default {
   name: "Weather",
@@ -35,20 +36,18 @@ export default {
 
           const api = `https://api.weatherapi.com/v1/current.json?key=288ce9269f9c46699a1185755220202&q=${lat},${long}`;
 
-          fetch(api)
-            .then((response) => response.json())
-            .then((data) => {
+          axios.get(api)
+            .then((response) => {
 
-              const region = data.location.region;
+              const region = response.data.location.region;
 
               this.stateShow = this.regionShort(region);
 
-              let icon = data.current.condition.icon;
-              const id = data.current.condition.text;
-              icon = this.weatherIcon(icon, id);
-              this.iconShow = icon
+              let icon = response.data.current.condition.icon;
+              const id = response.data.current.condition.text;
+              this.iconShow = this.weatherIcon(icon, id);
 
-              let temperature = data.current.temp_c;
+              let temperature = response.data.current.temp_c;
               temperature = temperature.toFixed(0);
               this.temperatureShow = temperature;
 
@@ -60,31 +59,30 @@ export default {
 
     location(lat, lng){
       let city =
-      fetch("https://us1.locationiq.com/v1/reverse.php?key=pk.9866ca8f778fce5a705ef63d65b98bc8&lat=" + lat + "&lon=" + lng + "&format=json")
-      .then(reply => reply.json())
-      .then(data => {
-          return data.address.city
+      axios.get("https://us1.locationiq.com/v1/reverse.php?key=pk.9866ca8f778fce5a705ef63d65b98bc8&lat=" + lat + "&lon=" + lng + "&format=json")
+      .then(reply => {
+          return reply.data.address.city
       })
       return city
 },
 
   weatherIcon(icon, id) {
     if (id.includes("thunder") && id.includes("rain")) {
-      icon = "storm.png";
+      icon = "storm";
     } else if (id.includes("thunder")) {
-      icon = "thunder.png";
+      icon = "thunder";
     } else if (id.includes("rain") || id.includes("drizzle")) {
-      icon = "raining.png";
+      icon = "raining";
     } else if (id.includes("Fog") || id.includes("Mist")) {
-      icon = "cloud.png";
+      icon = "cloud";
     } else if (
       id.includes("Cloudy") ||
       id.includes("Overcast") ||
       id.includes("cloudy")
     ) {
-      icon = "cloudy.png";
+      icon = "cloudy";
     } else if (id.includes("Sunny")) {
-      icon = "sun.png";
+      icon = "sun";
     }
     return icon;
 },

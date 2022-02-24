@@ -1,7 +1,8 @@
 <template>
   <div>
-      <Title text="405" />
-      <TextContent text="Redirecting..." />
+      <Title text="401" size='1' />
+      <TextContent text="Unauthorized" />
+      <TextContent id="redirect" text="Redirecting..." />
   </div>
 </template>
 
@@ -24,11 +25,11 @@ export default {
         }
     },
     mounted(){
-        setTimeout(this.redirect, 6000)
+        setTimeout(this.redirect, 5000)
     }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+@import './index.scss';
 </style>

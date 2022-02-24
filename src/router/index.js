@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import login from '../views/login/index.vue'
 import home from '../views/home/index.vue'
+import unauthorized from '../views/unauthorized/index.vue'
+import store from '@/store'
 
 Vue.use(VueRouter)
 
@@ -14,7 +16,12 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: home
+    component: home,
+  },
+  {
+    path: '/unauthorized',
+    name: 'unauthorized',
+    component: unauthorized
   }
 ]
 
@@ -24,4 +31,14 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next)=>{
+  if ( to.name === 'home' && !store.state.logged ){
+    next({
+      path: '/unauthorized',
+      replace: true
+    })
+  } else {
+    next();
+  }
+})
 export default router

@@ -50,7 +50,6 @@ export default new Vuex.Store({
     
     loginError(state){
       state.loginError = true
-
     }
   },
   actions: { 

@@ -55,6 +55,7 @@ export default {
             }else if(this.type != 'submit'){
                 this.setUser(this.fieldData)
             }
+            this.updateData()
         },
         updateData(){
             if(this.type == 'password'){

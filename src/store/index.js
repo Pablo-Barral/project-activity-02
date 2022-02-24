@@ -30,6 +30,8 @@ export default new Vuex.Store({
       if(state.loginValidated){
         state.logged = true
         state.loginError = false
+        state.user = ''
+        state.password = ''
         router.push('/home')
       }
     },
@@ -48,8 +50,7 @@ export default new Vuex.Store({
     
     loginError(state){
       state.loginError = true
-      state.user = ''
-      state.password = ''
+
     }
   },
   actions: { 
@@ -57,7 +58,6 @@ export default new Vuex.Store({
       users.every(user => {
         if(user.login == this.state.user &&
           user.password == this.state.password){
-          console.log("login")
           context.commit('validateLogin')
           context.commit('login')
           return false

@@ -46,6 +46,19 @@ export default {
         ...mapState(['loginError', 'user', 'password'])
     },
 
+    watch:{
+        user(newUser){
+            if (this.type != 'password' && this.type != 'submit'){
+                this.fieldData = newUser
+            }
+        },
+        password(newPassword){
+            if (this.type == 'password'){
+                this.fieldData = newPassword
+            }
+        }
+    },
+
     methods:{
         ...mapMutations(['setUser', 'setPassword']),
 
@@ -55,7 +68,7 @@ export default {
             }else if(this.type != 'submit'){
                 this.setUser(this.fieldData)
             }
-            this.updateData()
+            
         },
         updateData(){
             if(this.type == 'password'){

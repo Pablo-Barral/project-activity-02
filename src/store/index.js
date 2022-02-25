@@ -28,6 +28,12 @@ export default new Vuex.Store({
     },
     login(state){
       if(state.loginValidated){
+        if (!localStorage.getItem("user")){
+          localStorage.setItem('user', state.user)
+        }
+        if (!localStorage.getItem('password')){
+          localStorage.setItem('password', state.password)
+        }
         state.logged = true
         state.loginError = false
         state.user = ''
@@ -67,7 +73,7 @@ export default new Vuex.Store({
       if(!this.state.loginValidated){
         context.commit('loginError')
       }
-      },   
+      },  
   },
   modules: {
   }

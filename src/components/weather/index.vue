@@ -51,8 +51,8 @@ export default {
       let long = localStorage.getItem("long");
 
       const api = `https://api.weatherapi.com/v1/current.json?key=288ce9269f9c46699a1185755220202&q=${lat},${long}`;
-
       axios.get(api).then((response) => {
+        console.log(response)
         const region = response.data.location.region;
 
         this.stateShow = this.regionShort(region);
@@ -105,7 +105,7 @@ export default {
         id.includes("cloudy")
       ) {
         icon = "cloudy";
-      } else if (id.includes("Sunny")) {
+      } else if (id.includes("Sunny") || id.includes('Clear')) {
         icon = "sun";
       }
       return icon;

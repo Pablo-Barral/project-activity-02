@@ -2,9 +2,10 @@
   <span :class="{textSpan: !submitData, loginError: loginError && !submitData}">
       <input :type="type" 
       :placeholder="sample" 
-      :class="{submit: submitData}"
+      :class="{submit: submitData, passwordSpace: passSpace}"
       v-model="fieldData"
-      @blur="sendData">
+      @blur="sendData"
+      @input="spacePassword">
 
       <img v-if="icon" 
       :src="require(`@/assets/${iconData}.png`)" 
@@ -40,6 +41,7 @@ export default {
             iconData: this.icon,
             submitData: this.submit,
             fieldData: 'Continuar',
+            passSpace: false
         }
     },
     computed:{
@@ -75,6 +77,15 @@ export default {
                 this.fieldData = this.password
             }else if (this.type != 'submit'){
                 this.fieldData = this.user
+            }
+        },
+        spacePassword(){
+            if (this.type == 'password'){
+                if(this.fieldData){
+                    this.passSpace = true
+                }else{
+                    this.passSpace = false
+                }
             }
         }
         

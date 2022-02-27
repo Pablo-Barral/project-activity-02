@@ -8,6 +8,7 @@ span{
 border-radius: 50px;
 height: 67px;
 width: 100%;
+position: relative;
 
     input{
         background: transparent;
@@ -35,22 +36,9 @@ width: 100%;
 
     img{
         height: 20px;
-        position: relative;
-        top: 3px;
-        right: 3%;
-
-        @media(max-width: 1280px){
-            right: 0;
-        }
-        @media(max-width: 1000px){
-            right: -13%;
-        }
-        @media(max-width: 680px){
-            right: -7%;
-        }
-        @media(max-width: 320px){
-            right: 0;
-        }
+        position: absolute;
+        top: 20px;
+        right: 5%;
     }
 }
 
@@ -71,4 +59,11 @@ width: 100%;
 
 .loginError{
     border: solid 1px #E9B425;
+}
+
+.passwordSpace{
+    letter-spacing: 8px;
+    font-size: 36px;
+    padding: 0;
+    padding-left: 10px;
 }

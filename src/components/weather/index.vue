@@ -20,10 +20,10 @@ export default {
 
   data() {
     return {
-      temperatureShow: "",
-      cityShow: "",
-      stateShow: "",
-      iconShow: "",
+      temperatureShow: "22",
+      cityShow: "Juiz de Fora",
+      stateShow: "MG",
+      iconShow: "cloudy",
     };
   },
 

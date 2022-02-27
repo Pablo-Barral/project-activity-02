@@ -21,12 +21,12 @@ components:{
 
 data(){
   return{
-    hourShow: '',
-    minuteShow: '',
-    weekDayShow: '',
-    monthDayShow: '',
-    monthShow: '',
-    yearShow: ''
+    hourShow: '11',
+    minuteShow: '26',
+    weekDayShow: 'quarta-feira',
+    monthDayShow: '02',
+    monthShow: 'março',
+    yearShow: '2022'
   }
 },
 

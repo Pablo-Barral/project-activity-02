@@ -6,17 +6,8 @@ describe('index.vue', () => {
         const hourShow = '11'
         const minuteShow = '26'
         const wrapper = shallowMount(clock, {
-            propsData: { hourShow, minuteShow}
+            propsData: { hourShow, minuteShow }
         })
         expect(wrapper.text()).toMatch(`${hourShow}:${minuteShow}`)
     })
-    // it('renders props for date when passed', () => {
-    //     const weekDay = 'quarta-feira'
-    //     const monthDay = '02'
-    //     const month = 'março'
-    //     const year = '2022'
-    //     const weapper = shallowMount(clock, {
-
-    //     })
-    // })
 })

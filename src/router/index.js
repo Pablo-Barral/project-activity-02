@@ -16,22 +16,34 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: login
+    component: login,
+    meta:{    
+      title: 'Compass-Login'
+    }
   },
   {
     path: '/home',
     name: 'home',
     component: home,
+    meta:{
+      title: 'Compass-home'
+    }
   },
   {
     path: '/unauthorized',
     name: 'unauthorized',
-    component: unauthorized
+    component: unauthorized,
+    meta:{
+      title: 'Unauthorized'
+    }
   },
   {
     path: '*',
     name: 'notFound',
-    component: notFound
+    component: notFound,
+    meta:{
+      title: 'Page not fount'
+    }
   }
 ]
 
@@ -49,6 +61,12 @@ router.beforeEach((to, from, next)=>{
     })
   } else {
     next();
+  }
+})
+
+router.afterEach((to) =>{
+  if (to.meta && to.meta.title){
+    document.title = to.meta.title
   }
 })
 export default router

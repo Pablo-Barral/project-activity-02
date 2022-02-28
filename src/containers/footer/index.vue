@@ -9,11 +9,13 @@
             <span/>
             <TextContent :style="{'grid-column': 4, 'text-align': 'right'}" timerText=true text="Application refresh in" />
             <div :style="{'grid-column': 5}" id="timerBox">
-                <Timer/>
+                <Timer aria-label="Contador Tempo Restante"/>
                 <TextContent timerText=true text="seconds" />
             </div>
             <TextContent id="continueText"  :style="{'grid-column': 7}" continueText=true text="Continuar Navegando" />
-            <button @click="logout" :style="{'grid-column': 8}">Logout</button>
+            <button @click="logout" 
+            :style="{'grid-column': 8}"
+             aria-label="Botão Logout">Logout</button>
         </div>
   </footer>
 </template>

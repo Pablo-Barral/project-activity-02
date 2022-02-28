@@ -8,7 +8,7 @@
       @input="spacePassword">
 
       <img v-if="icon" 
-      :src="require(`@/assets/${iconData}.png`)" 
+      :src="require(`@/assets/${icon}.png`)" 
       alt="Icon">
   </span>
 </template>
@@ -38,7 +38,6 @@ export default {
 
     data(){
         return{
-            iconData: this.icon,
             submitData: this.submit,
             fieldData: 'Continuar',
             passSpace: false

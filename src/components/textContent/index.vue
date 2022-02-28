@@ -1,13 +1,13 @@
 <template>
   <p :class="{
-    greeting: greetingData,
-    temperature: temperatureData,
-    date: dateData,
-    location: locationData,
-    homeParagraph: homeParagraphData,
-    footerText: footerTextData,
-    timerText: timerTextData,
-    continueText: continueTextData,
+    greeting: greeting,
+    temperature: temperature,
+    date: date,
+    location: location,
+    homeParagraph: homeParagraph,
+    footerText: footerText,
+    timerText: timerText,
+    continueText: continueText,
     loginError: loginErrorData,
     visible: loginError
   }"> {{ text }} </p>
@@ -54,14 +54,6 @@ export default {
 
     data(){
       return{
-        greetingData: this.greeting,
-        temperatureData: this.temperature,
-        dateData: this.date,
-        locationData: this.location,
-        homeParagraphData: this.homeParagraph,
-        footerTextData: this.footerText,
-        timerTextData: this.timerText,
-        continueTextData: this.continueText,
         loginErrorData: this.loginErrorText
       }
     },

@@ -2,60 +2,60 @@
   <h1 v-if="size === '1'" 
   :style="{color: textColor}" 
   :class="{
-    greetingTitle: greetingTitleData,
-    loginTitle: loginTitleData,
-    firstTitle: homeFirstTitleData,
-    homeTitleStyle: homeTitleData
+    greetingTitle: greetingTitle,
+    loginTitle: loginTitle,
+    firstTitle: homeFirstTitle,
+    homeTitleStyle: homeTitle
   }">
     {{ text }}
   </h1>
   <h2 v-else-if="size === '2'" 
   :style="{color: textColor}" 
   :class="{
-    greetingTitle: greetingTitleData,
-    loginTitle: loginTitleData,
-    firstTitle: homeFirstTitleData,
-    homeTitleStyle: homeTitleData
+    greetingTitle: greetingTitle,
+    loginTitle: loginTitle,
+    firstTitle: homeFirstTitle,
+    homeTitleStyle: homeTitle
   }">
     {{ text }}
   </h2>
   <h3 v-else-if="size === '3'" 
   :style="{color: textColor}" 
   :class="{
-    greetingTitle: greetingTitleData,
-    loginTitle: loginTitleData,
-    firstTitle: homeFirstTitleData,
-    homeTitleStyle: homeTitleData
+    greetingTitle: greetingTitle,
+    loginTitle: loginTitle,
+    firstTitle: homeFirstTitle,
+    homeTitleStyle: homeTitle
   }">
     {{ text }}
   </h3>
   <h4 v-else-if="size === '4'" 
   :style="{color: textColor}" 
   :class="{
-    greetingTitle: greetingTitleData,
-    loginTitle: loginTitleData,
-    firstTitle: homeFirstTitleData,
-    homeTitleStyle: homeTitleData
+    greetingTitle: greetingTitle,
+    loginTitle: loginTitle,
+    firstTitle: homeFirstTitle,
+    homeTitleStyle: homeTitle
   }">
     {{ text }}
   </h4>
   <h5 v-else-if="size === '5'" 
   :style="{color: textColor}" 
   :class="{
-    greetingTitle: greetingTitleData,
-    loginTitle: loginTitleData,
-    firstTitle: homeFirstTitleData,
-    homeTitleStyle: homeTitleData
+    greetingTitle: greetingTitle,
+    loginTitle: loginTitle,
+    firstTitle: homeFirstTitle,
+    homeTitleStyle: homeTitle
   }">
     {{ text }}
   </h5>
   <h6 v-else-if="size === '6'" 
   :style="{color: textColor}" 
   :class="{
-    greetingTitle: greetingTitleData,
-    loginTitle: loginTitleData,
-    firstTitle: homeFirstTitleData,
-    homeTitleStyle: homeTitleData
+    greetingTitle: greetingTitle,
+    loginTitle: loginTitle,
+    firstTitle: homeFirstTitle,
+    homeTitleStyle: homeTitle
   }">
     {{ text }}
   </h6>
@@ -92,14 +92,6 @@ name:'Title',
 
  },
 
- data(){
-   return{
-     greetingTitleData: this.greetingTitle,
-     loginTitleData: this.loginTitle,
-     homeFirstTitleData: this.homeFirstTitle,
-     homeTitleData: this.homeTitle
-   }
- },
 }
 </script>
 

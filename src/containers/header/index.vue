@@ -1,8 +1,8 @@
 <template>
   <header>
       <img draggable="false" src="../../assets/compassuol-logo-min.png" alt="Compass Logo">
-      <Clock/>
-      <Weather/>
+      <Clock aria-label="Data e Hora"/>
+      <Weather aria-label="Clima Atual"/>
   </header>
 </template>
 

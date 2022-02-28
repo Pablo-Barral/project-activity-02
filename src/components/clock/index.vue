@@ -1,9 +1,10 @@
 <template>
   <div id="timeBox">
-    <div>
+    <div aria-label="Hora">
       {{ hourShow }}:{{ minuteShow }}
     </div>
-    <TextContent date=true :text="`${weekDayShow}, ${monthDayShow} de ${monthShow} de ${yearShow}`"/>
+    <TextContent date=true :text="`${weekDayShow}, ${monthDayShow} de ${monthShow} de ${yearShow}`"
+    aria-label="Data" />
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-once>
       <Title text="401" size='1' />
       <TextContent text="Unauthorized" />
       <TextContent id="redirect" text="Redirecting..." />

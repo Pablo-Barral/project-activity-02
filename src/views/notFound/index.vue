@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-once>
       <Title text="404" size='1' />
       <TextContent text="Page not found" />
   </div>

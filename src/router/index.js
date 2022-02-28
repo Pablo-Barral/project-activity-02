@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import login from '../views/login/index.vue'
-import home from '../views/home/index.vue'
-import unauthorized from '../views/unauthorized/index.vue'
-import notFound from '../views/notFound/index.vue'
 import store from '@/store'
 
 Vue.use(VueRouter)
@@ -24,7 +21,8 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: home,
+    component: () =>
+    import(/* webpackChunkName: "home" */ "../views/home/index.vue"),
     meta:{
       title: 'Compass-home'
     }
@@ -32,7 +30,8 @@ const routes = [
   {
     path: '/unauthorized',
     name: 'unauthorized',
-    component: unauthorized,
+    component: () =>
+    import(/* webpackChunkName: "unauthorized" */ "../views/unauthorized/index.vue"),
     meta:{
       title: 'Unauthorized'
     }
@@ -40,7 +39,8 @@ const routes = [
   {
     path: '*',
     name: 'notFound',
-    component: notFound,
+    component: () =>
+    import(/* webpackChunkName: "notFound" */ "../views/notFound/index.vue"),
     meta:{
       title: 'Page not fount'
     }

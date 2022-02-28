@@ -11,7 +11,7 @@
       <img v-if="icon"
       draggable="fasle" 
       :src="require(`@/assets/${icon}.png`)" 
-      alt="Icon">
+      :alt="`ícone ${sample}`">
   </span>
 </template>
 

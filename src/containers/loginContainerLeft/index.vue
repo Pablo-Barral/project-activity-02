@@ -20,6 +20,7 @@
                 text="Ops, usuário ou senha inválidos. Tente novamente!"
                 loginErrorText=true />
                 <Input type="submit"
+                sample="Continuar"
                 submit=true />
         </form>
       </div>

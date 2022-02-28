@@ -5,7 +5,8 @@
       :class="{submit: submitData, passwordSpace: passSpace}"
       v-model="fieldData"
       @blur="sendData"
-      @input="spacePassword">
+      @input="spacePassword"
+      :aria-describedby="`${sample}`">
 
       <img v-if="icon"
       draggable="fasle" 

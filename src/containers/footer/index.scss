@@ -70,8 +70,8 @@ footer{
             box-sizing: border-box;
             display: flex;
             justify-content: center;
-            width: 75%;
-            left: 25%;
+            width: 80%;
+            left: 20%;
             padding: 0 20%;
         }
     }
@@ -86,7 +86,7 @@ footer{
 
         @media(max-width: 1000px){
             display: block;
-            width: 25%;
+            width: 20%;
             position: absolute;
             bottom: 12%;
         }

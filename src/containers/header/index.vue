@@ -1,6 +1,6 @@
 <template>
   <header>
-      <img src="../../assets/compassuol-logo-min.png" alt="Compass Logo">
+      <img draggable="false" src="../../assets/compassuol-logo-min.png" alt="Compass Logo">
       <Clock/>
       <Weather/>
   </header>

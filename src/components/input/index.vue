@@ -7,7 +7,8 @@
       @blur="sendData"
       @input="spacePassword">
 
-      <img v-if="icon" 
+      <img v-if="icon"
+      draggable="fasle" 
       :src="require(`@/assets/${icon}.png`)" 
       alt="Icon">
   </span>

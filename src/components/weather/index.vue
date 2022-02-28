@@ -2,7 +2,7 @@
   <div id="weatherBox">
     <TextContent location="true" :text="`${cityShow} - ${stateShow}`" />
     <div>
-      <img :src="require(`@/assets/${iconShow}.png`)" alt="Icon" />
+      <img draggable="false" :src="require(`@/assets/${iconShow}.png`)" alt="Icon" />
       <TextContent temperature="true" :text="`${temperatureShow}°`" />
     </div>
   </div>

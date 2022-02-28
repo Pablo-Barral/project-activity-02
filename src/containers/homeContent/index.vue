@@ -1,6 +1,6 @@
 <template>
   <div id="homeBody">
-        <img src="@/assets/ball-LogoCompass.png" alt="Compass logo">
+        <img draggable="false" src="@/assets/ball-LogoCompass.png" alt="Compass logo">
         <div id="paragraphBox">
             <div>
                 <Title size=2 homeFirstTitle=true text="Our mission is" textColor="#C12D18"/>

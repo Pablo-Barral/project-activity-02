@@ -1,6 +1,6 @@
 <template>
   <div>
-      <img src="@/assets/compassuol-logo-white.png" alt="Logo Compass">
+      <img draggable="false" src="@/assets/compassuol-logo-white.png" alt="Logo Compass">
   </div>
 </template>
 

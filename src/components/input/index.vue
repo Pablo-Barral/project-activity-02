@@ -46,7 +46,10 @@ export default {
         }
     },
     computed:{
-        ...mapState(['loginError', 'user', 'password'])
+        ...mapState(['loginError', 'user', 'password']),
+        cleanField(){
+            return this.$sanitize(this.fieldData)
+        }
     },
 
     watch:{
@@ -67,9 +70,9 @@ export default {
 
         sendData(){
             if(this.type == 'password'){
-                this.setPassword(this.fieldData)
+                this.setPassword(this.cleanField)
             }else if(this.type != 'submit'){
-                this.setUser(this.fieldData)
+                this.setUser(this.cleanField)
             }
             
         },

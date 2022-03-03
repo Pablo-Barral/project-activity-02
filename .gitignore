@@ -18,6 +18,7 @@ package-lock.json
 # Editor directories and files
 .idea
 .vscode
+storybook-static
 *.suo
 *.ntvs*
 *.njsproj

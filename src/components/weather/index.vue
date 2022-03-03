@@ -35,6 +35,9 @@ export default {
             let long = position.coords.longitude;
             let lat = position.coords.latitude;
 
+            long.toFixed(20)
+            lat.toFixed(20)
+
             localStorage.setItem("lat", lat);
             localStorage.setItem("long", long);
             this.weatherShow()
